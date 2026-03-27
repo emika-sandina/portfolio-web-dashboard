@@ -1,5 +1,5 @@
 import SectionReveal from "./SectionReveal";
-
+import profile from "../assets/lin.png";
 function AboutSection() {
   return (
     <section
@@ -9,16 +9,7 @@ function AboutSection() {
       <SectionReveal className="section-shell">
         <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
           <div className="frost-card rounded-3xl p-5">
-            <div className="flex h-[380px] items-center justify-center rounded-2xl border-2 border-dashed border-brandLightGrey/70 bg-brandDarkGrey/5 text-center md:h-[420px]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brandDarkGrey">
-                  Profile Picture
-                </p>
-                <p className="mt-2 text-base font-medium text-brandBlack">
-                  Add your image here
-                </p>
-              </div>
-            </div>
+            <img src={profile} alt="Emika Sandina" className="w-full h-full object-cover rounded-2xl" />
           </div>
 
           <div>
