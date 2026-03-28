@@ -1,3 +1,5 @@
+import cvPdf from "../assets/w2120242_Emika_CV.pdf";
+import profile from "../assets/dp.png";
 import SectionReveal from "./SectionReveal";
 
 function HeroSection() {
@@ -10,7 +12,10 @@ function HeroSection() {
   ];
 
   return (
-    <section id="home" className="border-b border-brandLightGrey/30 bg-brandWhite">
+    <section
+      id="home"
+      className="border-b border-brandLightGrey/30 bg-brandWhite"
+    >
       <header className="sticky top-0 z-40 border-b border-brandLightGrey/25 bg-brandWhite/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-10">
           <div>
@@ -43,34 +48,30 @@ function HeroSection() {
               Computer Science Undergraduate
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-brandDarkGrey md:text-lg">
-              I build practical, user-focused software by combining responsive
-              frontend development with reliable backend systems and real-world
-              machine learning.
+              I am a Computer Science undergraduate driven by a passion for
+              building practical, user-centric software. I specialize in
+              full-stack development—crafting responsive React interfaces and
+              robust backend APIs —while leveraging machine learning to solve
+              complex, real-world data challenges.
             </p>
+            <div className="mt-6">
+              <a
+                href={cvPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex rounded-full border border-brandDarkBlue/30 bg-brandDarkBlue px-5 py-2.5 text-sm font-semibold text-brandWhite transition hover:bg-brandDarkBlue/90"
+              >
+                View CV
+              </a>
+            </div>
           </div>
 
-          <div className="frost-card rounded-3xl border-brandLightBlue/40 bg-gradient-to-br from-brandLightBlue/15 to-brandDarkBlue/10 p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brandDarkBlue">
-              Quick Intro
-            </p>
-            <p className="mt-4 text-lg font-semibold text-brandBlack">
-              Full-Stack Web Development | AI & Machine Learning
-            </p>
-            <p className="mt-8 text-sm leading-relaxed text-brandDarkGrey">
-              Open to internships and collaborative
-              software projects.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="rounded-full border border-brandDarkBlue/30 px-4 py-2 text-xs font-semibold text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-brandWhite"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+          <div className="frost-card rounded-3xl p-5 md:max-w-none">
+            <img
+              src={profile}
+              alt="Emika Sandina"
+              className="aspect-[4/5] w-full rounded-2xl object-cover md:aspect-[3/4]"
+            />
           </div>
         </div>
       </SectionReveal>
