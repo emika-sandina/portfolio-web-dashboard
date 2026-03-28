@@ -6,19 +6,19 @@ const educationItems = [
     period: "2024-Current",
     qualification: "BSc Computer Science",
     details:
-      "Modules: Database Management, Java OOP, Web Development and Design, Machine Learning and Data Mining, Server Side Web Development.",
+      "On-going",
   },
   {
     institute: "Informatics Institute Of Technology",
     period: "2023-2024",
     qualification: "Foundation Certificate of Higher Education",
-    details: "Grade Distinction.",
+    details: "Completed",
   },
   {
     institute: "Vidura College - Colombo",
     period: "2012-2022",
     qualification: "G.C.E. Ordinary Level Examination",
-    details: "8As 1C.",
+    details: "Completed",
   },
 ];
 

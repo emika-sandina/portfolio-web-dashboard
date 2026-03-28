@@ -2,20 +2,31 @@ import SectionReveal from "./SectionReveal";
 
 const skillGroups = [
   {
-    title: "Languages & Front-End",
-    items: ["JavaScript", "React JS", "HTML", "CSS", "Java", "Python", "PHP"],
+    title: "Programming Languages",
+    items: ["JavaScript", "Java", "Python"],
+  },
+
+  {
+    title: "Front-End Development",
+    items: ["React JS", "HTML", "CSS", "Figma"],
   },
   {
     title: "Back-End & Databases",
     items: ["Express JS", "Node.js", "MySQL", "MongoDB", "Supabase"],
   },
   {
-    title: "Machine Learning",
-    items: ["Supervised learning", "Classification", "Regression"],
+    title: "Machine Learning & Data Science",
+    items: [
+      "Scikit-Learn", 
+      "Pandas", 
+      "Predictive Modeling", 
+      "Data Preprocessing", 
+      "Classification & Regression", 
+    ],
   },
   {
-    title: "Tools & Concepts",
-    items: ["GitHub", "Trello", "Object-Oriented Programming (OOP)"],
+    title: "Tools",
+    items: ["GitHub", "Trello"],
   },
   {
     title: "Soft Skills",
