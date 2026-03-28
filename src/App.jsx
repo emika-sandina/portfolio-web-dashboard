@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
 import EducationSection from "./components/EducationSection";
 import ProjectsSection from "./components/ProjectsSection";
@@ -16,7 +15,6 @@ function App() {
         transition={{ duration: 0.9 }}
       />
       <HeroSection />
-      <AboutSection />
       <SkillsSection />
       <EducationSection />
       <ProjectsSection />
