@@ -5,19 +5,19 @@ const projects = [
     title: "Dengue Guard",
     stack: "React JS, Express JS, Supabase, XGBoost",
     description:
-      "Led a team to develop a dengue breeding site reporting and prediction platform. Trained an XGBoost machine learning model to forecast future weekly cases using historical epidemiological and weather data.",
+      "Dengue breeding site, dengue case reporting and prediction platform.",
   },
   {
     title: "Loan Approval Prediction System",
     stack: "Pandas, Sci-kit learn, KNN, Linear Regression",
     description:
-      "Built predictive models to assess credit risk and automate loan eligibility. Performed data cleaning and optimized classification/regression models using Pandas, Sci-kit learn, KNN, and Linear Regression.",
+      "Predictive models to assess credit risk and automate loan eligibility.",
   },
   {
-    title: "Climate Action",
-    stack: "HTML, CSS, JavaScript",
+    title: "Dengue Guard Landing Page",
+    stack: "ReactJS, TailwindCSS, Vite",
     description:
-      "Contributed to developing an informational website covering SDG 13 (Climate Action) using HTML, CSS, and JavaScript.",
+      "Developed a landing page for the Dengue Guard project on behalf of Marketing Purposes.",
   },
 ];
 
