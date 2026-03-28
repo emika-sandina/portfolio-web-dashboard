@@ -59,7 +59,7 @@ function HeroSection() {
                 href={cvPdf}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-full border border-brandDarkBlue/30 bg-brandDarkBlue px-5 py-2.5 text-sm font-semibold text-brandWhite transition hover:bg-brandDarkBlue/90"
+                className="inline-flex rounded-full border border-brandDarkBlue/30 bg-brandDarkBlue px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brandDarkBlue/90"
               >
                 View CV
               </a>

@@ -4,6 +4,7 @@ import SkillsSection from "./components/SkillsSection";
 import EducationSection from "./components/EducationSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <EducationSection />
       <ProjectsSection />
       <ContactSection />
+      <ThemeToggle />
     </div>
   );
 }

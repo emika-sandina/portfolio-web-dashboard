@@ -25,7 +25,7 @@ function ContactSection() {
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="mt-2 w-full rounded-xl border border-brandLightGrey/50 px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
+                  className="mt-2 w-full rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
               </label>
               <label className="text-sm font-medium text-brandBlack">
@@ -33,7 +33,7 @@ function ContactSection() {
                 <input
                   type="email"
                   placeholder="your@email.com"
-                  className="mt-2 w-full rounded-xl border border-brandLightGrey/50 px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
+                  className="mt-2 w-full rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
               </label>
               <label className="text-sm font-medium text-brandBlack">
@@ -41,12 +41,12 @@ function ContactSection() {
                 <textarea
                   rows="5"
                   placeholder="Your message"
-                  className="mt-2 w-full resize-none rounded-xl border border-brandLightGrey/50 px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
+                  className="mt-2 w-full resize-none rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
               </label>
               <button
                 type="submit"
-                className="rounded-full bg-brandDarkBlue px-6 py-3 text-sm font-semibold text-brandWhite transition hover:bg-brandLightBlue"
+                className="rounded-full bg-brandDarkBlue px-6 py-3 text-sm font-semibold text-white transition hover:bg-brandLightBlue"
               >
                 Submit
               </button>
@@ -91,14 +91,14 @@ function ContactSection() {
                 <div className="mt-3 flex flex-wrap gap-3">
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 rounded-full border border-brandDarkBlue/30 px-4 py-2 text-sm font-medium text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-brandWhite"
+                    className="inline-flex items-center gap-2 rounded-full border border-brandDarkBlue/30 px-4 py-2 text-sm font-medium text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-white"
                   >
                     <FaLinkedin />
                     LinkedIn
                   </a>
                   <a
                     href="#"
-                    className="inline-flex items-center gap-2 rounded-full border border-brandDarkBlue/30 px-4 py-2 text-sm font-medium text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-brandWhite"
+                    className="inline-flex items-center gap-2 rounded-full border border-brandDarkBlue/30 px-4 py-2 text-sm font-medium text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-white"
                   >
                     <FaGithub />
                     GitHub

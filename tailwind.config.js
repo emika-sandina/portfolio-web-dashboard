@@ -1,21 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        brandBlack: "#1C1C1C",
-        brandDarkGrey: "#5E5E5E",
-        brandLightGrey: "#848484",
-        brandWhite: "#FFFFFF",
-        brandLightBlue: "#2B9FDE",
-        brandDarkBlue: "#0E3CBD",
+        page: "rgb(var(--color-page) / <alpha-value>)",
+        card: "rgb(var(--color-card) / <alpha-value>)",
+        brandBlack: "rgb(var(--color-text-primary) / <alpha-value>)",
+        brandDarkGrey: "rgb(var(--color-text-secondary) / <alpha-value>)",
+        brandWhite: "rgb(var(--color-page) / <alpha-value>)",
+        brandDarkBlue: "rgb(var(--color-accent-primary) / <alpha-value>)",
+        brandLightBlue: "rgb(var(--color-accent-secondary) / <alpha-value>)",
+        brandLightGrey: "rgb(var(--color-text-secondary) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
       },
       boxShadow: {
-        card: "0 12px 30px rgba(28, 28, 28, 0.12)",
+        card: "var(--shadow-card)",
       },
     },
   },
