@@ -28,10 +28,22 @@ function ContactSection() {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY?.trim();
+    if (!accessKey) {
+      setPopup({
+        variant: "error",
+        title: "Could not send",
+        message:
+          "The contact form is missing its access key. Add VITE_WEB3FORMS_KEY to src/.env and restart the dev server.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     const formData = new FormData(event.target);
-    formData.append("access_key", "325fd208-f622-4fa4-862b-4f29f6fa6e14");
+    formData.append("access_key", accessKey);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -39,7 +51,17 @@ function ContactSection() {
         body: formData,
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        setPopup({
+          variant: "error",
+          title: "Could not send",
+          message: "The server returned an unexpected response. Please try again later.",
+        });
+        return;
+      }
 
       if (data.success) {
         event.target.reset();
