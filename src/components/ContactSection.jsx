@@ -162,16 +162,6 @@ function ContactSection() {
 
               <div className="flex items-start gap-3">
                 <span className="mt-1 rounded-full bg-brandLightBlue/15 p-2 text-brandDarkBlue">
-                  <FaPhone />
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-brandBlack">Phone</p>
-                  <p className="text-sm">075-463-8288</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <span className="mt-1 rounded-full bg-brandLightBlue/15 p-2 text-brandDarkBlue">
                   <FaEnvelope />
                 </span>
                 <div>
