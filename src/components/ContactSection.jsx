@@ -174,7 +174,7 @@ function ContactSection() {
                 <p className="text-sm font-semibold text-brandBlack">Profiles</p>
                 <div className="mt-3 flex flex-wrap gap-3">
                   <a
-                    href="www.linkedin.com/in/emika-sandina-243a98336"
+                    href="https://www.linkedin.com/in/emika-sandina-243a98336/"
                     className="inline-flex items-center gap-2 rounded-full border border-brandDarkBlue/30 px-4 py-2 text-sm font-medium text-brandDarkBlue transition hover:bg-brandDarkBlue hover:text-white"
                   >
                     <FaLinkedin />
