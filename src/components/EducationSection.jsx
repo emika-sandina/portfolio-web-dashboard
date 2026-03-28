@@ -16,10 +16,16 @@ const educationItems = [
   },
   {
     institute: "Vidura College - Colombo",
-    period: "2012-2022",
+    period: "2017-2022",
     qualification: "G.C.E. Ordinary Level Examination",
     details: "Completed",
   },
+  {
+    institute: "Highlands College - Maharagama",
+    period: "2012-2016",
+    qualification: "Primary Education",
+    details: "Completed",
+  }
 ];
 
 function EducationSection() {

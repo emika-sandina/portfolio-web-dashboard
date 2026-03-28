@@ -50,8 +50,8 @@ function HeroSection() {
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-brandDarkGrey md:text-lg">
               I am a Computer Science undergraduate driven by a passion for
               building practical, user-centric software. I specialize in
-              full-stack development—crafting responsive React interfaces and
-              robust backend APIs —while leveraging machine learning to solve
+              full-stack development—crafting responsive user interfaces and
+              robust RESTful APIs —while leveraging machine learning to solve
               complex, real-world data challenges.
             </p>
             <div className="mt-6">
@@ -63,6 +63,7 @@ function HeroSection() {
               >
                 View CV
               </a>
+
             </div>
           </div>
 

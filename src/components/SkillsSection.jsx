@@ -26,7 +26,7 @@ const skillGroups = [
   },
   {
     title: "Tools",
-    items: ["GitHub", "Trello"],
+    items: ["GitHub", "Trello", "Git", "Postman"],
   },
   {
     title: "Soft Skills",

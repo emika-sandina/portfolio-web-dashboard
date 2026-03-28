@@ -15,9 +15,15 @@ const projects = [
   },
   {
     title: "Dengue Guard Landing Page",
+    stack: "ReactJS, CSS, Vite",
+    description:
+      "Landing page for the Dengue Guard project, developed on behalf of Marketing Purposes.",
+  },
+  {
+    title: "Portfolio Website",
     stack: "ReactJS, TailwindCSS, Vite",
     description:
-      "Developed a landing page for the Dengue Guard project on behalf of Marketing Purposes.",
+      "Dashboard style portfolio for displaying projects, education and skills.",
   },
 ];
 
