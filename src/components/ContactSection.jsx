@@ -1,9 +1,74 @@
 import { FaEnvelope, FaGithub, FaLinkedin, FaLocationDot, FaPhone } from "react-icons/fa6";
+import { useCallback, useEffect, useState } from "react";
 import SectionReveal from "./SectionReveal";
 
 function ContactSection() {
-  const handleSubmit = (event) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [popup, setPopup] = useState(null);
+
+  const closePopup = useCallback(() => setPopup(null), []);
+
+  useEffect(() => {
+    if (!popup) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") closePopup();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [popup, closePopup]);
+
+  useEffect(() => {
+    if (!popup) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [popup]);
+
+  const onSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.target);
+    formData.append("access_key", "325fd208-f622-4fa4-862b-4f29f6fa6e14");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        event.target.reset();
+        setPopup({
+          variant: "success",
+          title: "Successfully sent",
+          message:
+            "Thank you for your message. I will get back to you as soon as I can.",
+        });
+      } else {
+        setPopup({
+          variant: "error",
+          title: "Could not send",
+          message:
+            typeof data.message === "string" && data.message.trim()
+              ? data.message
+              : "Something went wrong. Please try again later.",
+        });
+      }
+    } catch {
+      setPopup({
+        variant: "error",
+        title: "Could not send",
+        message:
+          "We could not reach the server. Check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -17,13 +82,15 @@ function ContactSection() {
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <form
             className="frost-card rounded-3xl p-7 md:p-9"
-            onSubmit={handleSubmit}
+            onSubmit={onSubmit}
           >
             <div className="grid gap-5">
               <label className="text-sm font-medium text-brandBlack">
                 Name
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Your name"
                   className="mt-2 w-full rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
@@ -32,6 +99,8 @@ function ContactSection() {
                 Email
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="your@email.com"
                   className="mt-2 w-full rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
@@ -39,16 +108,19 @@ function ContactSection() {
               <label className="text-sm font-medium text-brandBlack">
                 Message
                 <textarea
+                  name="message"
                   rows="5"
+                  required
                   placeholder="Your message"
                   className="mt-2 w-full resize-none rounded-xl border border-brandLightGrey/50 bg-page px-4 py-3 text-sm text-brandBlack outline-none transition focus:border-brandLightBlue"
                 />
               </label>
               <button
                 type="submit"
-                className="rounded-full bg-brandDarkBlue px-6 py-3 text-sm font-semibold text-white transition hover:bg-brandLightBlue"
+                disabled={isSubmitting}
+                className="rounded-full bg-brandDarkBlue px-6 py-3 text-sm font-semibold text-white transition hover:bg-brandLightBlue disabled:cursor-not-allowed disabled:opacity-70"
               >
-                Submit
+                {isSubmitting ? "Sending…" : "Submit"}
               </button>
             </div>
           </form>
@@ -109,6 +181,45 @@ function ContactSection() {
           </div>
         </div>
       </SectionReveal>
+
+      {popup ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+          onClick={closePopup}
+          role="presentation"
+        >
+          <div
+            className="frost-card w-full max-w-md rounded-2xl p-8 shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-dialog-title"
+            aria-describedby="contact-dialog-desc"
+          >
+            <h4
+              id="contact-dialog-title"
+              className={`text-xl font-bold ${
+                popup.variant === "success" ? "text-brandDarkBlue" : "text-red-600 dark:text-red-400"
+              }`}
+            >
+              {popup.title}
+            </h4>
+            <p
+              id="contact-dialog-desc"
+              className="mt-4 text-base leading-relaxed text-brandDarkGrey"
+            >
+              {popup.message}
+            </p>
+            <button
+              type="button"
+              onClick={closePopup}
+              className="mt-8 w-full rounded-full bg-brandDarkBlue py-3 text-sm font-semibold text-white transition hover:bg-brandLightBlue"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
