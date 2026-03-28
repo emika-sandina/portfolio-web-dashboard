@@ -2,7 +2,7 @@
 
 A sleek, responsive personal portfolio website built to showcase my experience across full-stack development and machine learning. As a Computer Science undergraduate passionate about building practical, user-focused software, I created this space to highlight my technical journey, core skills, and featured projects like DengueGuard and my credit risk prediction model.
 
-**Live Demo:** [Insert Link to Live Site Here]
+**Live Demo:** https://emika-sandina-dev.vercel.app/
 
 ## 🚀 Features
 
