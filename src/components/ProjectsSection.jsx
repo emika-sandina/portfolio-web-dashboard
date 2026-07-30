@@ -2,6 +2,12 @@ import SectionReveal from "./SectionReveal";
 
 const projects = [
   {
+    title: "Axiom AI",
+    stack: "React.js, Express.js, OpenRouter API (DeepSeek), Monaco Editor, Node.js",
+    description:
+      "AI coding mentor platform where users improve their problem-solving skills through structured, feedback-driven practice"
+  },
+  {
     title: "Dengue Guard",
     stack: "React JS, Express JS, Supabase, XGBoost",
     description:
@@ -12,12 +18,6 @@ const projects = [
     stack: "Pandas, Sci-kit learn, KNN, Linear Regression",
     description:
       "Predictive models to assess credit risk and automate loan eligibility.",
-  },
-  {
-    title: "Dengue Guard Landing Page",
-    stack: "ReactJS, CSS, Vite",
-    description:
-      "Landing page for the Dengue Guard project, developed on behalf of Marketing Purposes.",
   },
   {
     title: "Portfolio Website",
