@@ -3,16 +3,16 @@ import SectionReveal from "./SectionReveal";
 const skillGroups = [
   {
     title: "Programming Languages",
-    items: ["JavaScript", "Java", "Python"],
+    items: ["JavaScript", "Java", "Python", "C#"],
   },
 
   {
     title: "Front-End Development",
-    items: ["React JS", "HTML", "CSS", "Figma"],
+    items: ["Next JS", "React JS", "HTML", "CSS", "Figma"],
   },
   {
     title: "Back-End & Databases",
-    items: ["Express JS", "Node.js", "MySQL", "MongoDB", "Supabase"],
+    items: ["Express JS", "Node.js", "MySQL", "PostgreSQL", "Supabase"],
   },
   {
     title: "Machine Learning & Data Science",
