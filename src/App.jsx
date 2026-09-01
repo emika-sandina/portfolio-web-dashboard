@@ -27,7 +27,6 @@ function App() {
         <ProjectsSection />
         <SkillsSection />
         <EducationSection />
-        <AchievementsSection />
         <ContactSection />
       </main>
       <Footer />
