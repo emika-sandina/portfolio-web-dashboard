@@ -53,9 +53,6 @@ function Navbar() {
           href="#home"
           className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white hover:text-cyan-400 transition-colors"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 font-mono text-xs font-bold text-white shadow-sm group-hover:scale-105 transition-transform">
-            ES
-          </span>
           <span className="font-display font-semibold text-white tracking-normal">
             Emika Sandina
           </span>
