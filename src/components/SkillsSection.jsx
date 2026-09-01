@@ -1,77 +1,114 @@
 import SectionReveal from "./SectionReveal";
+import {
+  HiOutlineCodeBracket,
+  HiOutlineServerStack,
+  HiOutlineCommandLine,
+  HiOutlineCircleStack,
+  HiOutlineCpuChip,
+  HiOutlineWrenchScrewdriver,
+  HiOutlineSparkles,
+} from "react-icons/hi2";
 
-const skillGroups = [
+const skillCategories = [
+  {
+    title: "Frontend",
+    icon: HiOutlineCodeBracket,
+    skills: ["React.js", "Next.js", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "Backend",
+    icon: HiOutlineServerStack,
+    skills: ["Node.js", "Express.js", "REST APIs", "Authentication", "Authorization"],
+  },
   {
     title: "Programming Languages",
-    items: ["JavaScript", "Java", "Python", "C#"],
-  },
-
-  {
-    title: "Front-End Development",
-    items: ["Next JS", "React JS", "HTML", "CSS", "Figma"],
+    icon: HiOutlineCommandLine,
+    skills: ["JavaScript", "Python", "Java", "C#"],
   },
   {
-    title: "Back-End & Databases",
-    items: ["Express JS", "Node.js", "MySQL", "PostgreSQL", "Supabase"],
+    title: "Databases",
+    icon: HiOutlineCircleStack,
+    skills: ["MySQL", "Supabase", "PostgreSQL"],
   },
   {
-    title: "Machine Learning & Data Science",
-    items: [
-      "Scikit-Learn", 
-      "Pandas", 
-      "Predictive Modeling", 
-      "Data Preprocessing", 
-      "Classification & Regression", 
+    title: "AI & Machine Learning",
+    icon: HiOutlineCpuChip,
+    skills: [
+      "Scikit-learn",
+      "Pandas",
+      "Classification",
+      "Regression",
+      "LLM APIs",
+      "Prompt Engineering",
+      "Feature Engineering",
+      "Model Evaluation",
+      "Hyperparameter Tuning",
+      "GridSearchCV",
     ],
   },
   {
     title: "Tools",
-    items: ["GitHub", "Trello", "Git", "Postman"],
-  },
-  {
-    title: "Soft Skills",
-    items: [
-      "Leadership",
-      "Team Work",
-      "Adaptability",
-      "Problem Solving",
-      "Time Management",
-    ],
-  },
+    icon: HiOutlineWrenchScrewdriver,
+    skills: ["GitHub", "Git", "Postman", "Vercel", "Netlify", "Figma", "Trello"],
+  }
 ];
 
 function SkillsSection() {
   return (
-    <section id="skills" className="border-t border-brandLightGrey/30 bg-brandWhite">
-      <SectionReveal className="section-shell">
-        <h3 className="section-title">Skills</h3>
-        <p className="section-subtitle">
-          Technical and interpersonal strengths grouped for quick overview.
-        </p>
+    <section id="skills" className="relative py-24 md:py-32 border-t border-white/[0.06] bg-[#0c0c0c]/50">
+      <div className="section-shell">
+        <SectionReveal>
+          <span className="section-badge">Technologies</span>
+          <h2 className="section-heading">Skills & Stack</h2>
+          <p className="section-subtext">
+            A concrete overview of engineering languages, backend frameworks, databases, and AI tooling I utilize.
+          </p>
+        </SectionReveal>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {skillGroups.map((group, index) => (
-            <SectionReveal
-              key={group.title}
-              className="frost-card rounded-3xl p-7"
-              delay={index * 0.04}
-              y={20}
-            >
-              <h4 className="text-lg font-bold text-brandBlack">{group.title}</h4>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-brandDarkBlue/20 bg-brandLightBlue/10 px-4 py-2 text-sm font-medium text-brandDarkBlue"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </SectionReveal>
-          ))}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {skillCategories.map((category, idx) => {
+            const Icon = category.icon;
+            const isWide = category.skills.length > 5;
+
+            return (
+              <SectionReveal
+                key={category.title}
+                delay={0.06 + idx * 0.04}
+                className={`editorial-card p-6 flex flex-col justify-between group hover:border-white/20 transition-all duration-300 ${
+                  isWide ? "md:col-span-2 lg:col-span-2" : ""
+                }`}
+              >
+                <div>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base font-bold font-display text-[#f0f0f0] group-hover:text-cyan-300 transition-colors">
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-lg bg-white/[0.03] border border-white/[0.07] px-3 py-1.5 text-xs font-mono text-[#f0f0f0] hover:border-cyan-500/40 hover:bg-cyan-500/10 transition-colors"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-3 border-t border-white/[0.05] flex items-center justify-between text-[11px] font-mono text-[#a0a0a0]">
+                  <span>{category.skills.length} tools & skills</span>
+                  <span className="text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">Production stack</span>
+                </div>
+              </SectionReveal>
+            );
+          })}
         </div>
-      </SectionReveal>
+      </div>
     </section>
   );
 }
