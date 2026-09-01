@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { HiArrowRight, HiOutlineDocumentText } from "react-icons/hi2";
 import { FaLocationDot } from "react-icons/fa6";
 import profile from "../assets/dp.png";
-import cvPdf from "../assets/w2120242_Emika_CV.pdf";
+import cvPdf from "../assets/Emika Sandina CV.pdf";
 
 function HeroSection() {
   return (

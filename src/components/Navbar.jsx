@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { FiDownload } from "react-icons/fi";
-import cvPdf from "../assets/w2120242_Emika_CV.pdf";
+import cvPdf from "../assets/Emika Sandina CV.pdf";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -53,9 +53,7 @@ function Navbar() {
           href="#home"
           className="group flex items-center gap-2.5 text-sm font-semibold tracking-tight text-[#f0f0f0] hover:text-cyan-400 transition-colors"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 font-mono text-xs font-bold text-white shadow-sm group-hover:scale-105 transition-transform">
-            ES
-          </span>
+          
           <span className="font-display font-medium text-[#f0f0f0]">
             Emika Sandina
           </span>
